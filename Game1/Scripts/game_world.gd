@@ -1,7 +1,8 @@
-class_name GLOBAL
+class_name GameWorld
 extends Node
 
-var test := false
+var game_manager: GameManager
+var scene_manager: SceneManager
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

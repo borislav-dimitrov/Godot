@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b13ekbos6b8tf"]
+
+[ext_resource type="Script" path="res://Scripts/Managers/scene_manager.gd" id="1_f0a7n"]
+[ext_resource type="PackedScene" uid="uid://ywrw68rlvrld" path="res://Scenes/screen_fader.tscn" id="1_nw5bg"]
+
+[node name="SceneManager" type="Node"]
+script = ExtResource("1_f0a7n")
+
+[node name="ScreenFader" parent="." instance=ExtResource("1_nw5bg")]
+unique_name_in_owner = true

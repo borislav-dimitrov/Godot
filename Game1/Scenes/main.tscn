@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://dm6xwauhomyxa"]
+
+[ext_resource type="PackedScene" uid="uid://b13ekbos6b8tf" path="res://scene_manager.tscn" id="1_3ur8y"]
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_gltq6"]
+[ext_resource type="PackedScene" uid="uid://rxn6bj02rqa0" path="res://Scenes/game_manager.tscn" id="2_4tfks"]
+[ext_resource type="PackedScene" uid="uid://bapie31k4ecb7" path="res://Scenes/game_world.tscn" id="2_11rky"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_gltq6")
+
+[node name="VisionBlocker" type="ColorRect" parent="."]
+z_index = -1
+custom_minimum_size = Vector2(999999, 1e+09)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+color = Color(0, 0, 0, 1)
+
+[node name="GameManager" parent="." instance=ExtResource("2_4tfks")]
+unique_name_in_owner = true
+
+[node name="GameWorld" parent="." instance=ExtResource("2_11rky")]
+unique_name_in_owner = true
+
+[node name="SceneManager" parent="." instance=ExtResource("1_3ur8y")]
+unique_name_in_owner = true
