@@ -1,7 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://bfi7aumuw2us3"]
+[gd_scene load_steps=7 format=3 uid="uid://bfi7aumuw2us3"]
 
 [ext_resource type="Texture2D" uid="uid://c641kus6pmt4v" path="res://Art/sheet.png" id="1_fus3c"]
 [ext_resource type="Texture2D" uid="uid://cm2eh4f70ulvl" path="res://Art/tileset.png" id="2_7nx7s"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_wmrkh"]
+vertices = PackedVector2Array(1110, -408, 1110, -43, 24, -43, 24, -409)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(14, -420, 14, -33, 1120, -33, 1120, -418)])
+source_geometry_group_name = &"navigation_polygon_source_group"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f666d"]
 texture = ExtResource("1_fus3c")
@@ -2828,6 +2834,9 @@ sources/0 = SubResource("TileSetAtlasSource_f666d")
 sources/1 = SubResource("TileSetAtlasSource_5uysg")
 
 [node name="Level1" type="Node2D"]
+
+[node name="PlayerNav" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_wmrkh")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_ym6ll")

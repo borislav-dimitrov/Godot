@@ -25,6 +25,9 @@ size = Vector2(116, 118)
 scale = Vector2(0.3, 0.3)
 script = ExtResource("1_bgee8")
 
+[node name="Navigation" type="NavigationAgent2D" parent="."]
+path_postprocessing = 1
+
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

@@ -64,7 +64,7 @@ func load_scene(scene: String) -> void:
 			game_world.init()
 		game_manager.start_level()
 
-func transition_to(scene: String, transition_time: int = .5) -> void:
+func transition_to(scene: String, transition_time: float = .5) -> void:
 	screen_fader.transition_to(
 		Callable(load_scene).bind(scene),
 		transition_time

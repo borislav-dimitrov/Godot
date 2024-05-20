@@ -2,7 +2,6 @@ class_name ScreenFader
 
 extends CanvasModulate
 
-var _transitioning := false
 var _transition_callback
 var _transition_time: float
 var start_level_after_transition := false
