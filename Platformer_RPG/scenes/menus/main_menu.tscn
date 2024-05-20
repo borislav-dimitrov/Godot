@@ -1,0 +1,160 @@
+[gd_scene load_steps=8 format=3 uid="uid://bgrycfa0enftx"]
+
+[ext_resource type="Script" path="res://scripts/menus/main_menu.gd" id="1_5eo43"]
+[ext_resource type="Texture2D" uid="uid://dk6bw28dxjp8i" path="res://assets/background.jpg" id="1_m0uqd"]
+[ext_resource type="FontFile" uid="uid://dw1fwoil1ndbb" path="res://assets/fonts/Minimal5x7.ttf" id="2_ohhjv"]
+[ext_resource type="StyleBox" uid="uid://by2qwtiulypo5" path="res://styles/buttons/main_menu_button_normal.tres" id="3_m4y86"]
+[ext_resource type="StyleBox" uid="uid://cy0er63dktfif" path="res://styles/buttons/main_menu_button_hover.tres" id="4_h8p78"]
+[ext_resource type="StyleBox" uid="uid://tg7cpr8sojlr" path="res://styles/buttons/main_menu_button_pressed.tres" id="5_v110i"]
+[ext_resource type="StyleBox" uid="uid://cslcqhepucpk4" path="res://styles/buttons/main_menu_button_disabled.tres" id="6_mw0qp"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5eo43")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_m0uqd")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 80
+
+[node name="Separator" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="GameTitle" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.298039, 0.160784, 0.431373, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 8
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 8
+theme_override_fonts/font = ExtResource("2_ohhjv")
+theme_override_font_sizes/font_size = 128
+text = "Hero adventures"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 2
+
+[node name="NewGame" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.298039, 0.160784, 0.431373, 1)
+theme_override_colors/font_pressed_color = Color(0.544854, 0.34253, 0.751414, 1)
+theme_override_colors/font_hover_color = Color(0.545098, 0.341176, 0.752941, 1)
+theme_override_colors/font_focus_color = Color(0.545098, 0.341176, 0.752941, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.689415, 0.523583, 0.879086, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_ohhjv")
+theme_override_font_sizes/font_size = 96
+theme_override_styles/normal = ExtResource("3_m4y86")
+theme_override_styles/hover = ExtResource("4_h8p78")
+theme_override_styles/pressed = ExtResource("5_v110i")
+theme_override_styles/disabled = ExtResource("6_mw0qp")
+text = "New Game"
+
+[node name="Separator2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="LoadGame" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.298039, 0.160784, 0.431373, 1)
+theme_override_colors/font_pressed_color = Color(0.544854, 0.34253, 0.751414, 1)
+theme_override_colors/font_hover_color = Color(0.545098, 0.341176, 0.752941, 1)
+theme_override_colors/font_focus_color = Color(0.545098, 0.341176, 0.752941, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.689415, 0.523583, 0.879086, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_ohhjv")
+theme_override_font_sizes/font_size = 96
+theme_override_styles/normal = ExtResource("3_m4y86")
+theme_override_styles/hover = ExtResource("4_h8p78")
+theme_override_styles/pressed = ExtResource("5_v110i")
+theme_override_styles/disabled = ExtResource("6_mw0qp")
+text = "Load Game"
+
+[node name="Separator3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Options" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.298039, 0.160784, 0.431373, 1)
+theme_override_colors/font_pressed_color = Color(0.544854, 0.34253, 0.751414, 1)
+theme_override_colors/font_hover_color = Color(0.545098, 0.341176, 0.752941, 1)
+theme_override_colors/font_focus_color = Color(0.545098, 0.341176, 0.752941, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.689415, 0.523583, 0.879086, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_ohhjv")
+theme_override_font_sizes/font_size = 96
+theme_override_styles/normal = ExtResource("3_m4y86")
+theme_override_styles/hover = ExtResource("4_h8p78")
+theme_override_styles/pressed = ExtResource("5_v110i")
+theme_override_styles/disabled = ExtResource("6_mw0qp")
+text = "Options"
+
+[node name="Separator4" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ExitGame" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.298039, 0.160784, 0.431373, 1)
+theme_override_colors/font_pressed_color = Color(0.544854, 0.34253, 0.751414, 1)
+theme_override_colors/font_hover_color = Color(0.545098, 0.341176, 0.752941, 1)
+theme_override_colors/font_focus_color = Color(0.545098, 0.341176, 0.752941, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.689415, 0.523583, 0.879086, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_ohhjv")
+theme_override_font_sizes/font_size = 96
+theme_override_styles/normal = ExtResource("3_m4y86")
+theme_override_styles/hover = ExtResource("4_h8p78")
+theme_override_styles/pressed = ExtResource("5_v110i")
+theme_override_styles/disabled = ExtResource("6_mw0qp")
+text = "Exit Game"
+
+[node name="Separator5" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/LoadGame" to="." method="_on_load_game_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/ExitGame" to="." method="_on_exit_game_pressed"]

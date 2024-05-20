@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://dkind4ry2bfgt"]
+
+[ext_resource type="Texture2D" uid="uid://b2eoscndvt85d" path="res://art/ProjectUtumno_full.png" id="1_n1bod"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6lfs"]
+atlas = ExtResource("1_n1bod")
+region = Rect2(1728, 704, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8ifd"]
+atlas = ExtResource("1_n1bod")
+region = Rect2(1760, 704, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8n5ck"]
+atlas = ExtResource("1_n1bod")
+region = Rect2(1792, 704, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8byw7"]
+atlas = ExtResource("1_n1bod")
+region = Rect2(1824, 704, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vg1tt"]
+animations = [{
+"frames": [{
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_l6lfs")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_x8ifd")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_8n5ck")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_8byw7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Water1" type="AnimatedSprite2D"]
+position = Vector2(1328, 16)
+sprite_frames = SubResource("SpriteFrames_vg1tt")
+autoplay = "default"
+frame = 3
+frame_progress = 0.64893

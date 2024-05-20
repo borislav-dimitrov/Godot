@@ -1,0 +1,11 @@
+res://scenes/main.tscn
+res://styles/buttons/main_menu_button_normal.tres
+res://styles/buttons/main_menu_button_hover.tres
+res://styles/buttons/main_menu_button_pressed.tres
+res://styles/buttons/main_menu_button_disabled.tres
+res://scenes/menus/main_menu.tscn
+res://scenes/ui/screen_fader.tscn
+res://scenes/ui/gui.tscn
+res://scenes/player/Hero.tscn
+res://scenes/menus/pause_menu.tscn
+res://scenes/game_world.tscn

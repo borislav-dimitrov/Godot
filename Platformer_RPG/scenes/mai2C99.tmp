@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://xk03jiqb866r"]
+
+[ext_resource type="PackedScene" uid="uid://cexyjs53xft2y" path="res://scenes/Managers/scene_manager.tscn" id="1_sk6gt"]
+
+[node name="Main" type="Node"]
+
+[node name="ScreenFader" type="CanvasModulate" parent="."]
+
+[node name="FadePlayer" type="AnimationPlayer" parent="ScreenFader"]
+
+[node name="SceneManager" parent="." instance=ExtResource("1_sk6gt")]
+unique_name_in_owner = true

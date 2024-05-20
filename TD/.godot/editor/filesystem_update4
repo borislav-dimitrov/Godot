@@ -1,0 +1,9 @@
+res://prefabs/player.tscn
+res://scenes/world.tscn
+res://scripts/player/Player.gd
+res://scripts/animate.gd
+res://prefabs/act1_wall.tscn
+res://prefabs/coast/coast_wall_1_left.tscn
+res://prefabs/coast/coast_wall_1_down.tscn
+res://prefabs/coast/coast_wall_1_up.tscn
+res://prefabs/objects/fountain.tscn

@@ -1,0 +1,14 @@
+Node
+Control
+ColorRect
+TextureRect
+Label
+Button
+VBoxContainer
+HBoxContainer
+MarginContainer
+AnimationPlayer
+AnimatedSprite2D
+Panel
+CanvasLayer
+CharacterBody2D

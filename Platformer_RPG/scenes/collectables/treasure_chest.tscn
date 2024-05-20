@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://dv107cqlc3g4b"]
+
+[ext_resource type="Texture2D" uid="uid://dpgjvb58esuay" path="res://assets/Mine/Treasure Chest.png" id="1_pb6nf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qxrg"]
+atlas = ExtResource("1_pb6nf")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjwus"]
+atlas = ExtResource("1_pb6nf")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ofunv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qxrg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjwus")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="Treasure Chest" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_ofunv")
+autoplay = "default"
+frame_progress = 0.393178

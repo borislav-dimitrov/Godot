@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c306x0bpfy42q"]
+
+[ext_resource type="Texture2D" uid="uid://bp58lrjtgafyq" path="res://assets/Mine/book_platform.png" id="1_e2qup"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vmfuk"]
+size = Vector2(30, 9)
+
+[node name="Platform" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_e2qup")
+region_rect = Rect2(16, 1008, 32, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_vmfuk")
+one_way_collision = true

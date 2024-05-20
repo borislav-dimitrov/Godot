@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=3 uid="uid://dphe065v5wukk"]
+
+[ext_resource type="Script" path="res://scripts/Ui/screen_fader.gd" id="1_57tgf"]
+
+[sub_resource type="Animation" id="Animation_snldj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_qmj80"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fg5su"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_2771o"]
+resource_name = "short_fade_out"
+length = 0.5
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uv6cl"]
+_data = {
+"RESET": SubResource("Animation_snldj"),
+"fade_in": SubResource("Animation_qmj80"),
+"fade_out": SubResource("Animation_fg5su"),
+"short_fade_out": SubResource("Animation_2771o")
+}
+
+[node name="ScreenFader" type="CanvasModulate"]
+z_index = 10
+script = ExtResource("1_57tgf")
+
+[node name="FadePlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_uv6cl")
+}
+
+[connection signal="animation_finished" from="FadePlayer" to="." method="_on_fade_player_animation_finished"]
+[connection signal="animation_started" from="FadePlayer" to="." method="_on_fade_player_animation_started"]

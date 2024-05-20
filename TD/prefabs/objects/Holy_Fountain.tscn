@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://wud3k6arrdis"]
+
+[ext_resource type="Texture2D" uid="uid://b2eoscndvt85d" path="res://art/ProjectUtumno_full.png" id="1_wvpk1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4yyq"]
+atlas = ExtResource("1_wvpk1")
+region = Rect2(512, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f46p2"]
+atlas = ExtResource("1_wvpk1")
+region = Rect2(544, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3yirl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4yyq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f46p2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Holy_Fountain" type="AnimatedSprite2D"]
+position = Vector2(576, 384)
+sprite_frames = SubResource("SpriteFrames_3yirl")
+autoplay = "default"

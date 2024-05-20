@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://r6kmt23v2cos"]
+
+[ext_resource type="AudioStream" uid="uid://bvk66wtu5i76i" path="res://assets/Audio/deep_sea.mp3" id="1_dkkas"]
+
+[node name="Music" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_dkkas")
+autoplay = true
+bus = &"Music"

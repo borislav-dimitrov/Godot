@@ -1,0 +1,10 @@
+Camera2D
+AnimatedSprite2D
+Node2D
+TileMap
+Sprite2D
+AnimationPlayer
+CollisionShape2D
+NavigationAgent2D
+NavigationRegion2D
+CharacterBody2D

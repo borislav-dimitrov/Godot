@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://cmildx3ow4pak"]
+
+[ext_resource type="Texture2D" uid="uid://vfgnk3pvvhuc" path="res://assets/Mine/Mouse.png" id="1_8iqvs"]
+[ext_resource type="Script" path="res://scripts/Enemies/enemy_movement.gd" id="1_eoh17"]
+[ext_resource type="PackedScene" uid="uid://buwbwxbvrjd0j" path="res://scenes/misc/kill_zone.tscn" id="3_5q1jw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2jqm"]
+atlas = ExtResource("1_8iqvs")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6a6vy"]
+atlas = ExtResource("1_8iqvs")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ht7ax"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2jqm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6a6vy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.5
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i8bnp"]
+size = Vector2(13.0421, 4.57706)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8hfmy"]
+size = Vector2(12, 5)
+
+[node name="Mouse_Enemy" type="CharacterBody2D"]
+script = ExtResource("1_eoh17")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_ht7ax")
+autoplay = "default"
+frame_progress = 0.228106
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.849955, 4.44057)
+scale = Vector2(0.8, 0.8)
+shape = SubResource("RectangleShape2D_i8bnp")
+
+[node name="Kill_Zone" parent="." instance=ExtResource("3_5q1jw")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kill_Zone"]
+position = Vector2(1, 4.5)
+shape = SubResource("RectangleShape2D_8hfmy")
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+target_position = Vector2(9, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+target_position = Vector2(-9, 0)
