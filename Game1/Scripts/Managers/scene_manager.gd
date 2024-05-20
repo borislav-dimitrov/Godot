@@ -24,8 +24,11 @@ func start_game():
 	show_main_menu()
 
 func show_main_menu():
+	# Clean up
 	if active_scene:
 		clear_active_scene()
+	if game_world.initialized:
+		game_world.clean_up()
 	
 	current_scene = 'main_menu'
 	screen_fader.fade_in()
@@ -55,6 +58,11 @@ func load_scene(scene: String) -> void:
 	
 	if active_scene:
 		game_world.add_child(active_scene)
+	
+	if scene.contains('level'):
+		if not game_world.initialized:
+			game_world.init()
+		game_manager.start_level()
 
 func transition_to(scene: String, transition_time: int = .5) -> void:
 	screen_fader.transition_to(
