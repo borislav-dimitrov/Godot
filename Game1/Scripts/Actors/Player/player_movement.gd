@@ -6,10 +6,6 @@ var move_speed: int
 func initialize(nav: NavigationAgent2D, ms: float):
 	navigation = nav
 	move_speed = ms
-	
-	# How far to stop before the target was reached
-	navigation.path_desired_distance = 4
-	navigation.target_desired_distance = 4
 
 func move(player: CharacterBody2D, delta: float):
 	if navigation.is_navigation_finished():

@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://2d6uq0xk6alw"]
+[gd_scene load_steps=8 format=3 uid="uid://2d6uq0xk6alw"]
 
 [ext_resource type="Texture2D" uid="uid://ebyp2k1recdo" path="res://icon.svg" id="1_mpw1v"]
 [ext_resource type="Script" path="res://Scripts/Collectibles/chest.gd" id="1_v05lp"]
+[ext_resource type="Texture2D" uid="uid://cxqnvlbg4gf1j" path="res://Art/rounded_border.png" id="3_k8pnf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4cedn"]
 size = Vector2(120, 120)
@@ -49,10 +50,16 @@ collision_mask = 2
 input_pickable = true
 script = ExtResource("1_v05lp")
 
+[node name="border" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(4.6875, 10)
+texture = ExtResource("3_k8pnf")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_mpw1v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_4cedn")
 

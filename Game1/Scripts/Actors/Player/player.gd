@@ -47,9 +47,13 @@ func mouse_click():
 			if interactable in interaction.in_range:
 				print('Interacting with %s' % interactable.name)
 			else:
-				movement.set_movement_target(mouse_pos)
+				movement.navigation.path_desired_distance = 30
+				movement.navigation.target_desired_distance = 30
+				movement.set_movement_target(interactable.global_position)
 				print('Moving towards interactable %s' % interactable.name)
 			break
 	
 	if not interactable:
+		movement.navigation.path_desired_distance = 16
+		movement.navigation.target_desired_distance = 16
 		movement.set_movement_target(mouse_pos)
