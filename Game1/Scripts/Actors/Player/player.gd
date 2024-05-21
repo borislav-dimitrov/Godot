@@ -30,11 +30,11 @@ func move(delta):
 	movement.set_movement_target(camera_2d.get_global_mouse_position())
 
 func mouse_click():
-	var mouse_pos = camera_2d.get_global_mouse_position()
+	var mouse_pos: Vector2 = camera_2d.get_global_mouse_position()
 	var space_state = get_world_2d().direct_space_state
-	var query = PhysicsPointQueryParameters2D.new()
+	var query: PhysicsPointQueryParameters2D = PhysicsPointQueryParameters2D.new()
 	query.position = mouse_pos
-	var results = space_state.intersect_point(query)
+	var results: Array[Dictionary] = space_state.intersect_point(query)
 	
 	var clickable: Node2D = null
 	

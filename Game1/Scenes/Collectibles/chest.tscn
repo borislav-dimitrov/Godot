@@ -1,13 +1,52 @@
-[gd_scene load_steps=3 format=3 uid="uid://2d6uq0xk6alw"]
+[gd_scene load_steps=7 format=3 uid="uid://2d6uq0xk6alw"]
 
 [ext_resource type="Texture2D" uid="uid://ebyp2k1recdo" path="res://icon.svg" id="1_mpw1v"]
+[ext_resource type="Script" path="res://Scripts/Collectibles/chest.gd" id="1_v05lp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4cedn"]
 size = Vector2(120, 120)
 
+[sub_resource type="Animation" id="Animation_n10gf"]
+resource_name = "hover"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fyhgc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f5alg"]
+_data = {
+"RESET": SubResource("Animation_fyhgc"),
+"hover": SubResource("Animation_n10gf")
+}
+
 [node name="chest" type="StaticBody2D" groups=["Clickable"]]
 scale = Vector2(0.2, 0.2)
 collision_layer = 8
+input_pickable = true
+script = ExtResource("1_v05lp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_mpw1v")
@@ -15,3 +54,12 @@ texture = ExtResource("1_mpw1v")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_4cedn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_f5alg")
+}
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

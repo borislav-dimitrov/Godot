@@ -1,17 +1,17 @@
 extends StaticBody2D
 
+@onready var animation_player = $AnimationPlayer
 var mouse_in: bool = false
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func _on_mouse_entered():
+	mouse_in = true
+	animation_player.play('hover')
 
+func _on_mouse_exited():
+	mouse_in = false
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-func _on_input_event(viewport, event: InputEventMouse, shape_idx):
-	if event.get_:
-		pass
-	pass # Replace with function body.
+func _on_animation_player_animation_finished(anim_name):
+	if anim_name == 'hover' and mouse_in:
+		animation_player.play('hover')
+	if anim_name == 'hover' and not mouse_in:
+		animation_player.play('RESET')
