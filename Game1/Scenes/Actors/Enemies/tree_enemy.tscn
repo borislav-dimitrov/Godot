@@ -38,7 +38,6 @@ navigation = NodePath("Navigation/NavigationAgent")
 move_speed = 70.0
 
 [node name="Navigation" type="Node2D" parent="."]
-scale = Vector2(1, 1)
 
 [node name="NavigationAgent" type="NavigationAgent2D" parent="Navigation"]
 debug_enabled = true
@@ -57,7 +56,6 @@ shape = SubResource("CircleShape2D_le7js")
 [node name="Aggro" type="Node2D" parent="."]
 
 [node name="AggroEnter" type="Area2D" parent="Aggro"]
-scale = Vector2(1, 1)
 collision_layer = 4
 collision_mask = 2
 
@@ -66,7 +64,6 @@ shape = SubResource("CircleShape2D_o0xka")
 debug_color = Color(0.975918, 0.0952025, 0.313808, 0.42)
 
 [node name="AggroExit" type="Area2D" parent="Aggro"]
-scale = Vector2(1, 1)
 collision_layer = 4
 collision_mask = 2
 

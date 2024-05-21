@@ -34,7 +34,7 @@ func recalc_path():
 		navigation.target_position = home_pos
 
 func set_target_node(body: CharacterBody2D):
-	if body.get_class() == 'CharacterBody2D' and body.is_player:
+	if body.get_class() == 'CharacterBody2D':
 		target_node = body
 
 func clear_target_node(body: CharacterBody2D):
