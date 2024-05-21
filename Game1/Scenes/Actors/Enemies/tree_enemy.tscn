@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=3 uid="uid://orfd5pd1sib"]
+
+[ext_resource type="Script" path="res://Scripts/Actors/Enemies/tree_enemy.gd" id="1_1jcso"]
+[ext_resource type="Texture2D" uid="uid://ebyp2k1recdo" path="res://icon.svg" id="1_dmbxm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4omm"]
+atlas = ExtResource("1_dmbxm")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nabno"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4omm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_le7js"]
+radius = 60.208
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o0xka"]
+radius = 395.127
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hg6ue"]
+radius = 720.07
+
+[node name="TreeEnemy" type="CharacterBody2D" node_paths=PackedStringArray("navigation")]
+scale = Vector2(0.2, 0.2)
+collision_layer = 4
+collision_mask = 3
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_1jcso")
+navigation = NodePath("Navigation/NavigationAgent")
+move_speed = 70.0
+
+[node name="Navigation" type="Node2D" parent="."]
+scale = Vector2(1, 1)
+
+[node name="NavigationAgent" type="NavigationAgent2D" parent="Navigation"]
+debug_enabled = true
+
+[node name="RecaltculateTimer" type="Timer" parent="Navigation"]
+wait_time = 0.1
+autostart = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 0.469494, 0.401435, 1)
+sprite_frames = SubResource("SpriteFrames_nabno")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_le7js")
+
+[node name="Aggro" type="Node2D" parent="."]
+
+[node name="AggroEnter" type="Area2D" parent="Aggro"]
+scale = Vector2(1, 1)
+collision_layer = 4
+collision_mask = 2
+
+[node name="AggroEnterCollision" type="CollisionShape2D" parent="Aggro/AggroEnter"]
+shape = SubResource("CircleShape2D_o0xka")
+debug_color = Color(0.975918, 0.0952025, 0.313808, 0.42)
+
+[node name="AggroExit" type="Area2D" parent="Aggro"]
+scale = Vector2(1, 1)
+collision_layer = 4
+collision_mask = 2
+
+[node name="AggroExitCollision" type="CollisionShape2D" parent="Aggro/AggroExit"]
+shape = SubResource("CircleShape2D_hg6ue")
+
+[connection signal="timeout" from="Navigation/RecaltculateTimer" to="." method="_on_recaltculate_timer_timeout"]
+[connection signal="body_entered" from="Aggro/AggroEnter" to="." method="_on_aggro_enter_body_entered"]
+[connection signal="body_exited" from="Aggro/AggroExit" to="." method="_on_aggro_exit_body_exited"]

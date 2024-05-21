@@ -4,7 +4,7 @@ extends Node
 var game_manager: GameManager
 var scene_manager: SceneManager
 
-var player_scn: String = 'res://Scenes/Player/player.tscn'
+var player_scn: String = 'res://Scenes/Actors/Player/player.tscn'
 
 var player: Player
 var initialized := false
@@ -12,7 +12,6 @@ var initialized := false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

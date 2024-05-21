@@ -1,5 +1,1 @@
 TODOs
-	Add enemy
-	Make the enemy chase the player when within range
-	Add hp ot the player/enemy
-	Make them attack eachother and lose hp
