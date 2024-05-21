@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bix6nnaq4drpt"]
+[gd_scene load_steps=8 format=3 uid="uid://bix6nnaq4drpt"]
 
 [ext_resource type="Script" path="res://Scripts/Actors/Player/player.gd" id="1_bgee8"]
 [ext_resource type="Texture2D" uid="uid://ebyp2k1recdo" path="res://icon.svg" id="2_ax76m"]
+[ext_resource type="Script" path="res://Scripts/Actors/Player/interaction.gd" id="3_8tctx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h4omm"]
 atlas = ExtResource("2_ax76m")
@@ -21,10 +22,13 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_th6wq"]
 radius = 60.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_lnrci"]
+radius = 110.0
+
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.2, 0.2)
 collision_layer = 2
-collision_mask = 5
+collision_mask = 13
 script = ExtResource("1_bgee8")
 move_speed = 100.0
 hp = 50
@@ -43,3 +47,14 @@ sprite_frames = SubResource("SpriteFrames_c3dar")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
 shape = SubResource("CircleShape2D_th6wq")
+
+[node name="Interaction" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 8
+script = ExtResource("3_8tctx")
+
+[node name="Collider" type="CollisionShape2D" parent="Interaction"]
+shape = SubResource("CircleShape2D_lnrci")
+
+[connection signal="body_entered" from="Interaction" to="Interaction" method="_on_body_entered"]
+[connection signal="body_exited" from="Interaction" to="Interaction" method="_on_body_exited"]

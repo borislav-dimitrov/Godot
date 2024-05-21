@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var navigation: NavigationAgent2D = $Navigation
 @onready var movement: PlayerMovement = preload('res://Scripts/Actors/Player/player_movement.gd').new()
+@onready var interaction = $Interaction
 
 @export var move_speed: float
 @export var hp: int
@@ -36,15 +37,19 @@ func mouse_click():
 	query.position = mouse_pos
 	var results: Array[Dictionary] = space_state.intersect_point(query)
 	
-	var clickable: Node2D = null
+	var interactable: Node2D = null
 	
 	for obj in results:
 		var object = obj.collider
 		var groups = object.get_groups()
-		if 'Clickable' in groups:
-			clickable = object
-			print('Clicked %s' % object.name)
+		if 'Interactable' in groups:
+			interactable = object
+			if interactable in interaction.in_range:
+				print('Interacting with %s' % interactable.name)
+			else:
+				movement.set_movement_target(mouse_pos)
+				print('Moving towards interactable %s' % interactable.name)
 			break
 	
-	if not clickable:
+	if not interactable:
 		movement.set_movement_target(mouse_pos)
