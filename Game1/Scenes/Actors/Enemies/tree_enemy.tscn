@@ -27,7 +27,7 @@ radius = 395.127
 [sub_resource type="CircleShape2D" id="CircleShape2D_hg6ue"]
 radius = 720.07
 
-[node name="TreeEnemy" type="CharacterBody2D" node_paths=PackedStringArray("navigation")]
+[node name="TreeEnemy" type="CharacterBody2D" node_paths=PackedStringArray("navigation") groups=["Enemy"]]
 scale = Vector2(0.2, 0.2)
 collision_layer = 4
 collision_mask = 3

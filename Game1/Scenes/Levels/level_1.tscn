@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bfi7aumuw2us3"]
+[gd_scene load_steps=9 format=3 uid="uid://bfi7aumuw2us3"]
 
 [ext_resource type="Texture2D" uid="uid://c641kus6pmt4v" path="res://Art/sheet.png" id="1_fus3c"]
 [ext_resource type="Texture2D" uid="uid://cm2eh4f70ulvl" path="res://Art/tileset.png" id="2_7nx7s"]
 [ext_resource type="PackedScene" uid="uid://orfd5pd1sib" path="res://Scenes/Actors/Enemies/tree_enemy.tscn" id="3_2c6qx"]
+[ext_resource type="PackedScene" uid="uid://2d6uq0xk6alw" path="res://Scenes/Collectibles/chest.tscn" id="4_r5vnk"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_wmrkh"]
 vertices = PackedVector2Array(339, -409, 439, -409, 438, -338, 339, -305, 465, -305, 526, -337, 526, -408, 1110, -408, 1110, -43, 24, -43, 24, -410, 250, -410, 250, -214, 464, -214)
@@ -2859,3 +2860,8 @@ layer_5/tile_data = PackedInt32Array()
 
 [node name="TreeEnemy" parent="Enemies" instance=ExtResource("3_2c6qx")]
 position = Vector2(519, -202)
+
+[node name="Collectibles" type="Node2D" parent="."]
+
+[node name="chest" parent="Collectibles" instance=ExtResource("4_r5vnk")]
+position = Vector2(95, -215)

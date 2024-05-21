@@ -6,7 +6,7 @@
 [ext_resource type="StyleBox" uid="uid://tg7cpr8sojlr" path="res://styles/buttons/main_menu_button_pressed.tres" id="3_yyeqn"]
 [ext_resource type="StyleBox" uid="uid://cslcqhepucpk4" path="res://styles/buttons/main_menu_button_disabled.tres" id="4_r2ome"]
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" groups=["UI"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

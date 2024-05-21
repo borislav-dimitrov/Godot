@@ -20,3 +20,11 @@ func _on_aggro_enter_body_entered(body):
 
 func _on_aggro_exit_body_exited(body):
 	movement.clear_target_node(body)
+
+
+func _on_input_event(viewport, event, shape_idx):
+	pass # Replace with function body.
+
+
+func _on_mouse_entered():
+	pass # Replace with function body.
