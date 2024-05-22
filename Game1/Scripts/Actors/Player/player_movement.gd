@@ -1,7 +1,7 @@
 class_name PlayerMovement
 
 var navigation: NavigationAgent2D
-var move_speed: int
+var move_speed: float
 var anim_sprite: AnimatedSprite2D
 
 func initialize(nav: NavigationAgent2D, ms: float, animated_sprite: AnimatedSprite2D):
@@ -9,7 +9,7 @@ func initialize(nav: NavigationAgent2D, ms: float, animated_sprite: AnimatedSpri
 	move_speed = ms
 	anim_sprite = animated_sprite
 
-func move(player: CharacterBody2D, delta: float):
+func move(player: CharacterBody2D):
 	_handle_animations(player)
 	
 	if navigation.is_navigation_finished():

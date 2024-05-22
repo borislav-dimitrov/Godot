@@ -66,7 +66,8 @@ script = ExtResource("1_v05lp")
 
 [node name="border" type="Sprite2D" parent="."]
 visible = false
-scale = Vector2(4.6875, 10)
+position = Vector2(0, 14)
+scale = Vector2(1.2, 2.3)
 texture = ExtResource("3_k8pnf")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]

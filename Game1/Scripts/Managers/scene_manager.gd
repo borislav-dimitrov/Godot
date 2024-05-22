@@ -4,6 +4,7 @@ extends Node
 @onready var screen_fader: ScreenFader = %ScreenFader
 var game_manager: GameManager
 var game_world: GameWorld
+var combat_manager: CombatManager
 
 # Scenes files
 var main_menu_scn: String = 'res://Scenes/Menus/main_menu.tscn'

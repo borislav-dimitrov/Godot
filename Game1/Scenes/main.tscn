@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dm6xwauhomyxa"]
+[gd_scene load_steps=6 format=3 uid="uid://dm6xwauhomyxa"]
 
-[ext_resource type="PackedScene" uid="uid://b13ekbos6b8tf" path="res://scene_manager.tscn" id="1_3ur8y"]
+[ext_resource type="PackedScene" uid="uid://b13ekbos6b8tf" path="res://Scenes/managers/scene_manager.tscn" id="1_3ur8y"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_gltq6"]
-[ext_resource type="PackedScene" uid="uid://rxn6bj02rqa0" path="res://Scenes/game_manager.tscn" id="2_4tfks"]
+[ext_resource type="PackedScene" uid="uid://rxn6bj02rqa0" path="res://Scenes/managers/game_manager.tscn" id="2_4tfks"]
 [ext_resource type="PackedScene" uid="uid://bapie31k4ecb7" path="res://Scenes/game_world.tscn" id="2_11rky"]
+[ext_resource type="PackedScene" uid="uid://bwdl0l8wjgffs" path="res://Scenes/managers/combat_manager.tscn" id="5_oe7lr"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_gltq6")
@@ -28,4 +29,7 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 
 [node name="SceneManager" parent="." instance=ExtResource("1_3ur8y")]
+unique_name_in_owner = true
+
+[node name="CombatManager" parent="." instance=ExtResource("5_oe7lr")]
 unique_name_in_owner = true

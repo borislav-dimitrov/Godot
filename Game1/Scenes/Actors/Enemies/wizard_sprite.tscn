@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://orfd5pd1sib"]
+[gd_scene load_steps=22 format=3 uid="uid://orfd5pd1sib"]
 
 [ext_resource type="Script" path="res://Scripts/Actors/Enemies/wizard_sprite.gd" id="1_8876a"]
 [ext_resource type="Texture2D" uid="uid://cbqc2labx721i" path="res://Art/enemies/wizard_sprite/wizard idle.png" id="2_0dqjo"]
@@ -112,10 +112,13 @@ animations = [{
 height = 42.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o0xka"]
-radius = 111.005
+radius = 133.936
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hg6ue"]
 radius = 239.052
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kmy2g"]
+radius = 61.1883
 
 [node name="WizardSprite" type="CharacterBody2D" node_paths=PackedStringArray("navigation") groups=["Enemy"]]
 scale = Vector2(0.7, 0.7)
@@ -140,7 +143,6 @@ scale = Vector2(-1, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SpriteHolder"]
 modulate = Color(1, 0.469494, 0.401435, 1)
-scale = Vector2(1, 1)
 sprite_frames = SubResource("SpriteFrames_nabno")
 animation = &"Idle"
 autoplay = "Idle"
@@ -168,6 +170,15 @@ collision_mask = 2
 [node name="AggroExitCollision" type="CollisionShape2D" parent="Aggro/AggroExit"]
 shape = SubResource("CircleShape2D_hg6ue")
 
+[node name="CombatStarter" type="Area2D" parent="."]
+position = Vector2(-2.5, 0)
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CombatStarter"]
+shape = SubResource("CircleShape2D_kmy2g")
+
 [connection signal="timeout" from="Navigation/RecaltculateTimer" to="." method="_on_recaltculate_timer_timeout"]
 [connection signal="body_entered" from="Aggro/AggroEnter" to="." method="_on_aggro_enter_body_entered"]
 [connection signal="body_exited" from="Aggro/AggroExit" to="." method="_on_aggro_exit_body_exited"]
+[connection signal="body_entered" from="CombatStarter" to="." method="_on_combat_starter_body_entered"]

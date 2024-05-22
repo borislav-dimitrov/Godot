@@ -20,15 +20,12 @@ func _ready():
 	max_health = hp
 	current_health = hp
 
-func _process(delta):
-	pass
-
-func _physics_process(delta):
+func _physics_process(_delta):
 	if Input.is_action_just_pressed("left_click"):
 		mouse_click()
-	movement.move(self, delta)
+	movement.move(self)
 
-func move(delta):
+func move(_delta):
 	movement.set_movement_target(camera_2d.get_global_mouse_position())
 
 func mouse_click():

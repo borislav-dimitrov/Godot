@@ -3,19 +3,12 @@ extends Node
 
 var game_world: GameWorld
 var scene_manager: SceneManager
+var combat_manager: CombatManager
 
 var player: Player
 var player_spawn_positions: Dictionary = {
 	'level_1': Vector2(105, -75),
 }
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 func start_level():
 	move_player_to_spawn()

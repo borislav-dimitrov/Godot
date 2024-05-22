@@ -1,7 +1,8 @@
-class_name TreeEnemy
+class_name WizardSprite
 extends CharacterBody2D
 
 @onready var movement: EnemyMovement = preload('res://Scripts/Actors/Enemies/enemy_movement.gd').new()
+@onready var combat: EnemyCombat = preload('res://Scripts/Actors/Enemies/enemy_combat.gd').new()
 @onready var anim_sprite: AnimatedSprite2D = $SpriteHolder/AnimatedSprite2D
 
 @export var navigation: NavigationAgent2D
@@ -10,7 +11,7 @@ extends CharacterBody2D
 func _ready():
 	movement.initialize(navigation, global_position, move_speed, anim_sprite)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	movement.move(self)
 
 func _on_recaltculate_timer_timeout():
@@ -22,10 +23,5 @@ func _on_aggro_enter_body_entered(body):
 func _on_aggro_exit_body_exited(body):
 	movement.clear_target_node(body)
 
-
-func _on_input_event(viewport, event, shape_idx):
-	pass # Replace with function body.
-
-
-func _on_mouse_entered():
-	pass # Replace with function body.
+func _on_combat_starter_body_entered(body):
+	combat.trigger_start_combat(body, self)
