@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cipg208sh13lk"
-path="res://.godot/imported/walk.png-d34af6f41ef29eb4339e0a89c955f689.ctex"
+uid="uid://cbqc2labx721i"
+path="res://.godot/imported/wizard idle.png-2ddf6a6c833ed7e72338a5bb6815f509.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/skeleton/walk.png"
-dest_files=["res://.godot/imported/walk.png-d34af6f41ef29eb4339e0a89c955f689.ctex"]
+source_file="res://Art/enemies/wizard_sprite/wizard idle.png"
+dest_files=["res://.godot/imported/wizard idle.png-2ddf6a6c833ed7e72338a5bb6815f509.ctex"]
 
 [params]
 

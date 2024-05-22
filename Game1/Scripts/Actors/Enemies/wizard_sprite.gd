@@ -2,12 +2,13 @@ class_name TreeEnemy
 extends CharacterBody2D
 
 @onready var movement: EnemyMovement = preload('res://Scripts/Actors/Enemies/enemy_movement.gd').new()
+@onready var anim_sprite: AnimatedSprite2D = $SpriteHolder/AnimatedSprite2D
 
 @export var navigation: NavigationAgent2D
 @export var move_speed: float
 
 func _ready():
-	movement.initialize(navigation, global_position, move_speed)
+	movement.initialize(navigation, global_position, move_speed, anim_sprite)
 
 func _physics_process(delta):
 	movement.move(self)

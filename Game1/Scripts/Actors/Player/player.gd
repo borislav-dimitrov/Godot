@@ -4,7 +4,8 @@ extends CharacterBody2D
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var navigation: NavigationAgent2D = $Navigation
 @onready var movement: PlayerMovement = preload('res://Scripts/Actors/Player/player_movement.gd').new()
-@onready var interaction = $Interaction
+@onready var interaction: Area2D = $Interaction
+@onready var anim_sprite: AnimatedSprite2D = $SpriteHolder/AnimatedSprite2D
 
 @export var move_speed: float
 @export var hp: int
@@ -13,7 +14,7 @@ var max_health: int
 var current_health: int
 
 func _ready():
-	movement.initialize(navigation, move_speed)
+	movement.initialize(navigation, move_speed, anim_sprite)
 	
 	# Values
 	max_health = hp

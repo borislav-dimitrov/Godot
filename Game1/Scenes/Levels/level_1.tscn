@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bfi7aumuw2us3"]
+[gd_scene load_steps=21 format=3 uid="uid://bfi7aumuw2us3"]
 
 [ext_resource type="Texture2D" uid="uid://buddm7geh0x2o" path="res://Art/pixel_art_top_down/TX Shadow.png" id="1_0eept"]
 [ext_resource type="Texture2D" uid="uid://do2laixik3n47" path="res://Art/pixel_art_top_down/TX Struct.png" id="2_pigu6"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://uap440d6gtsm" path="res://Art/pixel_art_top_down/TX Props.png" id="6_kngok"]
 [ext_resource type="Texture2D" uid="uid://cnabji6mx8ir3" path="res://Art/pixel_art_top_down/TX Plant.png" id="7_wxiy1"]
 [ext_resource type="Texture2D" uid="uid://ti2aqnbfp5lh" path="res://Art/pixel_art_top_down/TX Shadow Plant.png" id="8_5in4d"]
+[ext_resource type="PackedScene" uid="uid://orfd5pd1sib" path="res://Scenes/Actors/Enemies/wizard_sprite.tscn" id="9_d202w"]
+[ext_resource type="PackedScene" uid="uid://2d6uq0xk6alw" path="res://Scenes/Collectibles/chest.tscn" id="9_gbvds"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_wmrkh"]
 vertices = PackedVector2Array(940, -558, 685, -557, 685, -851, 1043, -851, 1045, -755, 2228, -883, 2228, -588, 1900, -588, 1900, -716, 1901, -756, 1043, -716, 1043, -556, 979, -556, 403, -108, 403, -44, 44, -44, 44, -307, 402, -307, 407, -149, 980, -108, 941, -148, 1901, -883)
@@ -667,4 +669,10 @@ layer_6/tile_data = PackedInt32Array()
 
 [node name="Enemies" type="Node2D" parent="."]
 
+[node name="WizardSprite" parent="Enemies" instance=ExtResource("9_d202w")]
+position = Vector2(736, -805)
+
 [node name="Collectibles" type="Node2D" parent="."]
+
+[node name="chest" parent="Collectibles" instance=ExtResource("9_gbvds")]
+position = Vector2(696, -845)

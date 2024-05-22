@@ -424,40 +424,41 @@ animations = [{
 "speed": 17.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_th6wq"]
-radius = 60.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8wd2a"]
+radius = 8.0
+height = 26.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lnrci"]
-radius = 135.0
+radius = 33.0151
 
 [node name="Player" type="CharacterBody2D"]
-scale = Vector2(0.2, 0.2)
 collision_layer = 2
 collision_mask = 13
 script = ExtResource("1_bgee8")
 move_speed = 100.0
 hp = 50
 
+[node name="SpriteHolder" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SpriteHolder"]
+sprite_frames = SubResource("SpriteFrames_c3dar")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.545101
+
 [node name="Navigation" type="NavigationAgent2D" parent="."]
-debug_enabled = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 position_smoothing_speed = 3.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_c3dar")
-animation = &"Attack"
-autoplay = "Idle"
-frame = 11
-frame_progress = 1.0
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-rotation = 1.5708
-shape = SubResource("CircleShape2D_th6wq")
+position = Vector2(2, 10)
+shape = SubResource("CapsuleShape2D_8wd2a")
 
 [node name="Interaction" type="Area2D" parent="."]
+position = Vector2(2, 10)
 collision_layer = 2
 collision_mask = 8
 script = ExtResource("3_8tctx")

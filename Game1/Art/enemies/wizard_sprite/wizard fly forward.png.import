@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wbuojkldm65k"
-path="res://.godot/imported/defense.png-26d9b78988343ce1c7f039e89bb01a6b.ctex"
+uid="uid://buv2ts4rfgki5"
+path="res://.godot/imported/wizard fly forward.png-383c91819a16b5a433f70cd4292646e1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/skeleton/defense.png"
-dest_files=["res://.godot/imported/defense.png-26d9b78988343ce1c7f039e89bb01a6b.ctex"]
+source_file="res://Art/enemies/wizard_sprite/wizard fly forward.png"
+dest_files=["res://.godot/imported/wizard fly forward.png-383c91819a16b5a433f70cd4292646e1.ctex"]
 
 [params]
 

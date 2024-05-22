@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgiou4vwub561"
-path="res://.godot/imported/dead.png-084733c10ab49a4ddd5866e22a139c96.ctex"
+uid="uid://wbuojkldm65k"
+path="res://.godot/imported/defense.png-708312d490a4167b6889ae433a7b32c5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/skeleton/dead.png"
-dest_files=["res://.godot/imported/dead.png-084733c10ab49a4ddd5866e22a139c96.ctex"]
+source_file="res://Art/enemies/skeleton/defense.png"
+dest_files=["res://.godot/imported/defense.png-708312d490a4167b6889ae433a7b32c5.ctex"]
 
 [params]
 
