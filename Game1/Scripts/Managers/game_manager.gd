@@ -6,7 +6,7 @@ var scene_manager: SceneManager
 
 var player: Player
 var player_spawn_positions: Dictionary = {
-	'level_1': Vector2(60, -80),
+	'level_1': Vector2(105, -75),
 }
 
 # Called when the node enters the scene tree for the first time.
