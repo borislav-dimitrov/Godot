@@ -1,0 +1,6 @@
+Developement Plan:
+	1. Setup the project (use node js with some database)
+	2. Setup user login table (id, name, password, date created)
+	3. Create the login screen
+	4. Authorise user
+	5. When user logged in successfully, load his profile (linked by id from user login table)

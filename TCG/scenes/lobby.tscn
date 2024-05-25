@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://7y31erpbbium"]
+
+[ext_resource type="Texture2D" uid="uid://cjivupojry2o7" path="res://assets/bg.jpg" id="1_hv1n6"]
+[ext_resource type="PackedScene" uid="uid://cq8davjhi48pw" path="res://scenes/building.tscn" id="2_gseal"]
+
+[node name="Lobby" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(2.4, 1.8)
+texture = ExtResource("1_hv1n6")
+
+[node name="MainCam" type="Camera2D" parent="."]
+
+[node name="Buildings" type="Node2D" parent="."]
+
+[node name="TownHall" parent="Buildings" instance=ExtResource("2_gseal")]
+position = Vector2(730, 173)
+
+[node name="Arena" parent="Buildings" instance=ExtResource("2_gseal")]
+modulate = Color(1, 0.368629, 0.521888, 1)
+position = Vector2(-871, 256)
+building_type = 1
+
+[node name="Tower" parent="Buildings" instance=ExtResource("2_gseal")]
+modulate = Color(0, 0, 0.901961, 1)
+position = Vector2(-382, -18)
+building_type = 2

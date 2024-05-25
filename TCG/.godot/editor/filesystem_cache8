@@ -1,0 +1,25 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1716622037
+icon.svg::CompressedTexture2D::2106450807392670685::1716617882::1716617889::1::::<><>::
+::res://assets/::1716619097
+bg.jpg::CompressedTexture2D::5422367564797290968::1716618459::1716618460::1::::<><>::
+town_hall.png::CompressedTexture2D::3979941193679940165::1716619097::1716619097::1::::<><>::
+::res://docs/::1716622037
+Battle Field and Combat.png::CompressedTexture2D::7697122383629878654::1710236898::1716622128::1::::<><>::
+Cards.txt::TextFile::-1::1710243076::0::1::::<><>::
+dev plan.txt::TextFile::-1::1710249816::0::1::::<><>::
+notes.txt::TextFile::-1::1710235576::0::1::::<><>::
+::res://materials/::1716621126
+inline-outline.tres::ShaderMaterial::7462590786077292090::1716621017::0::1::::<><>::res://shaders/inline-outline.gdshader
+inline.tres::ShaderMaterial::7723877904146567016::1716621126::0::1::::<><>::res://shaders/inline.gdshader
+outline.tres::ShaderMaterial::5988303553205817233::1716620778::0::1::::<><>::res://shaders/outline.gdshader
+::res://scenes/::1716621988
+building.tscn::PackedScene::5964170599680502176::1716621988::0::1::::<><>::res://scripts/building.gd<>uid://bwx6bx1sm6w1b::::res://assets/town_hall.png
+lobby.tscn::PackedScene::2297334805991451788::1716621988::0::1::::<><>::uid://cjivupojry2o7::::res://assets/bg.jpg<>uid://cq8davjhi48pw::::res://scenes/building.tscn
+::res://scripts/::1716621987
+building.gd::GDScript::-1::1716621987::0::1::::<>Node2D<>::
+::res://shaders/::1716621988
+inline-outline.gdshader::Shader::-1::1716621988::0::1::::<><>::
+inline.gdshader::Shader::-1::1716621988::0::1::::<><>::
+outline.gdshader::Shader::-1::1716621988::0::1::::<><>::
+::res://styles/::1716617936

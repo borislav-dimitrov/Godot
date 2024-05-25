@@ -1,0 +1,9 @@
+res://scenes/lobby.tscn
+res://shaders/outline.gdshader
+res://scenes/building.tscn
+res://shaders/inline.gdshader
+res://materials/inline.tres
+res://materials/inline-outline.gdshader
+res://materials/outline.tres
+res://scripts/building.gd
+res://shaders/inline-outline.gdshader

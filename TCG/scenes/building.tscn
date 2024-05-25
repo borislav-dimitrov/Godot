@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cq8davjhi48pw"]
+
+[ext_resource type="Script" path="res://scripts/building.gd" id="1_hhtkt"]
+[ext_resource type="Texture2D" uid="uid://bwx6bx1sm6w1b" path="res://assets/town_hall.png" id="2_8hn5f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_geret"]
+size = Vector2(210, 225)
+
+[node name="Building" type="Area2D"]
+script = ExtResource("1_hhtkt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_8hn5f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(38, -7)
+shape = SubResource("RectangleShape2D_geret")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -1,0 +1,21 @@
+Quality:
+	* Common
+	* Good
+	* Rare
+	* Epic
+	* Legendary
+	* Godlike
+
+Attributes:
+	* Cooldown (or mana cost)
+	* Atk/HP (for minions)
+	* Effecet/s
+	* Race
+	* Elite creature mark (powerful creature, each team may control only one of a kind at a time)
+	* Different damage type (phys, fire, cold, etc.)
+	* Move speed for creatures (defaults to 1/2 boxes)
+
+Races:
+	* Each race have unique speciallities/effects
+	
+	
