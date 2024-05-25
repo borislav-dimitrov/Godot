@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=3 uid="uid://boywk54epg2vd"]
 
 [ext_resource type="Script" path="res://scripts/cards/card_held.gd" id="1_atd0x"]
-[ext_resource type="Texture2D" uid="uid://d20ap51dd0joh" path="res://assets/card_placeholder.png" id="2_sxprg"]
+[ext_resource type="Texture2D" uid="uid://d20ap51dd0joh" path="res://assets/cards/card_placeholder.png" id="2_sxprg"]
+
 
 [node name="CardHeld" type="Container"]
 custom_minimum_size = Vector2(160, 300)

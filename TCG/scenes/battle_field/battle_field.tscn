@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ch5wmgmwkeu0h"]
 
-[ext_resource type="Texture2D" uid="uid://bepf7chwfeafg" path="res://assets/battleground.jpg" id="2_kob7k"]
+[ext_resource type="Texture2D" uid="uid://bepf7chwfeafg" path="res://assets/battle_field/battleground.jpg" id="2_kob7k"]
 [ext_resource type="PackedScene" uid="uid://bjilqmgwga4hc" path="res://scenes/battle_field/battle_field_ui.tscn" id="3_mad36"]
 
 [node name="BattleField" type="Node"]

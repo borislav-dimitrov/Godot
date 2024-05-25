@@ -1,11 +1,11 @@
 AnimationPlayer
+Sprite2D
+Container
 ColorRect
 TextureRect
 GridContainer
 Control
 MarginContainer
-Container
-Sprite2D
 Node
 CanvasLayer
 HBoxContainer
