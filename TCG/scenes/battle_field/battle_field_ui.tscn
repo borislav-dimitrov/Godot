@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjilqmgwga4hc"]
+
+[ext_resource type="Script" path="res://scripts/battle_field/battle_field_ui.gd" id="1_hyamr"]
+[ext_resource type="Script" path="res://scripts/ui/HandContainer.gd" id="2_53hv2"]
+[ext_resource type="PackedScene" uid="uid://c0w8eposuxr8s" path="res://scenes/battle_field/field_grid.tscn" id="2_wo6ag"]
+[ext_resource type="PackedScene" uid="uid://dtv16ej3hv1nr" path="res://scenes/card/card.tscn" id="3_wqw6c"]
+
+[node name="BattleFieldUI" type="CanvasLayer"]
+script = ExtResource("1_hyamr")
+
+[node name="Field" type="Node" parent="."]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="FieldGrid" parent="UI/MarginContainer" instance=ExtResource("2_wo6ag")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="HandContainer" type="HBoxContainer" parent="UI/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 10
+script = ExtResource("2_53hv2")
+
+[node name="Card1" parent="UI/MarginContainer/HandContainer" instance=ExtResource("3_wqw6c")]
+layout_mode = 2
+
+[node name="Card2" parent="UI/MarginContainer/HandContainer" instance=ExtResource("3_wqw6c")]
+layout_mode = 2
+
+[node name="Card3" parent="UI/MarginContainer/HandContainer" instance=ExtResource("3_wqw6c")]
+layout_mode = 2
+
+[node name="Card4" parent="UI/MarginContainer/HandContainer" instance=ExtResource("3_wqw6c")]
+layout_mode = 2
+
+[node name="Card5" parent="UI/MarginContainer/HandContainer" instance=ExtResource("3_wqw6c")]
+layout_mode = 2
+
+[node name="Card6" parent="UI/MarginContainer/HandContainer" instance=ExtResource("3_wqw6c")]
+layout_mode = 2
+
+[node name="Card7" parent="UI/MarginContainer/HandContainer" instance=ExtResource("3_wqw6c")]
+layout_mode = 2
+
+[node name="CardHolder" type="Node" parent="."]
+unique_name_in_owner = true
+
+[connection signal="mouse_entered" from="UI/MarginContainer/HandContainer" to="UI/MarginContainer/HandContainer" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="UI/MarginContainer/HandContainer" to="UI/MarginContainer/HandContainer" method="_on_mouse_exited"]
