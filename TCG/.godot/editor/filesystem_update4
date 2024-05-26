@@ -15,3 +15,11 @@ res://scenes/card/card_on_board.tscn
 res://scripts/cards/card_on_board.gd
 res://scenes/card/card.tscn
 res://scripts/global.gd
+res://scenes/features/chat.tscn
+res://scenes/features/deck_pane.tscn
+res://scenes/features/settings_pane.tscn
+res://scenes/features/players_pane.tscn
+res://scenes/features/player_pane.tscn
+res://scenes/features/players_right_pane.tscn
+res://scenes/features/players_left_pane.tscn
+res://scenes/features/palyers_pane.tscn

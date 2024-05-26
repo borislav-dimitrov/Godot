@@ -92,7 +92,7 @@ _data = {
 }
 
 [node name="Cell" type="Container"]
-custom_minimum_size = Vector2(105, 130)
+custom_minimum_size = Vector2(130, 170)
 script = ExtResource("1_epcym")
 
 [node name="Anim" type="AnimationPlayer" parent="."]
@@ -102,7 +102,7 @@ libraries = {
 
 [node name="Background" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 0)
-position = Vector2(52.5, 64)
+position = Vector2(60, 85)
 texture = ExtResource("2_hkywf")
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

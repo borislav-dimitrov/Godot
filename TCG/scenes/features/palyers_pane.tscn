@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0xdqyikerbfh"]
+
+[ext_resource type="PackedScene" uid="uid://mkgb05htjfqy" path="res://scenes/features/player_pane.tscn" id="1_1rmf0"]
+
+[node name="PlayersLeft" type="VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 710.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+
+[node name="Player" parent="." instance=ExtResource("1_1rmf0")]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Player2" parent="." instance=ExtResource("1_1rmf0")]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Player3" parent="." instance=ExtResource("1_1rmf0")]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Player4" parent="." instance=ExtResource("1_1rmf0")]
+layout_mode = 2
+size_flags_horizontal = 0

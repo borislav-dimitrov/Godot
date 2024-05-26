@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjilqmgwga4hc"]
+[gd_scene load_steps=9 format=3 uid="uid://bjilqmgwga4hc"]
 
 [ext_resource type="Script" path="res://scripts/battle_field/battle_field_ui.gd" id="1_hyamr"]
 [ext_resource type="Script" path="res://scripts/ui/HandContainer.gd" id="2_53hv2"]
+[ext_resource type="PackedScene" uid="uid://c0xdqyikerbfh" path="res://scenes/features/palyers_pane.tscn" id="2_bn2kh"]
 [ext_resource type="PackedScene" uid="uid://c0w8eposuxr8s" path="res://scenes/battle_field/field_grid.tscn" id="2_wo6ag"]
+[ext_resource type="PackedScene" uid="uid://bll2oah6xjnq4" path="res://scenes/features/chat.tscn" id="3_bvfbl"]
 [ext_resource type="PackedScene" uid="uid://dtv16ej3hv1nr" path="res://scenes/card/card.tscn" id="3_wqw6c"]
+[ext_resource type="PackedScene" uid="uid://d28j8fx6haj11" path="res://scenes/features/deck_pane.tscn" id="4_dn4s0"]
+[ext_resource type="PackedScene" uid="uid://dagibawmvx4s2" path="res://scenes/features/settings_pane.tscn" id="7_16yqq"]
 
 [node name="BattleFieldUI" type="CanvasLayer"]
 script = ExtResource("1_hyamr")
@@ -23,40 +27,64 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
+[node name="PlayersLeftPane" parent="UI/MarginContainer" instance=ExtResource("2_bn2kh")]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
 [node name="FieldGrid" parent="UI/MarginContainer" instance=ExtResource("2_wo6ag")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(1300, 700)
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="HandContainer" type="HBoxContainer" parent="UI/MarginContainer"]
+[node name="PlayersLeftPane2" parent="UI/MarginContainer" instance=ExtResource("2_bn2kh")]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="bottom_ui" type="HBoxContainer" parent="UI/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Chat" parent="UI/MarginContainer/bottom_ui" instance=ExtResource("3_bvfbl")]
+layout_mode = 2
+
+[node name="Deck" parent="UI/MarginContainer/bottom_ui" instance=ExtResource("4_dn4s0")]
+layout_mode = 2
+
+[node name="HandContainer" type="HBoxContainer" parent="UI/MarginContainer/bottom_ui"]
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_constants/separation = 10
 script = ExtResource("2_53hv2")
 
-[node name="Card1" parent="UI/MarginContainer/HandContainer" instance=ExtResource("3_wqw6c")]
+[node name="Card1" parent="UI/MarginContainer/bottom_ui/HandContainer" instance=ExtResource("3_wqw6c")]
 layout_mode = 2
 
-[node name="Card2" parent="UI/MarginContainer/HandContainer" instance=ExtResource("3_wqw6c")]
+[node name="Card2" parent="UI/MarginContainer/bottom_ui/HandContainer" instance=ExtResource("3_wqw6c")]
 layout_mode = 2
 
-[node name="Card3" parent="UI/MarginContainer/HandContainer" instance=ExtResource("3_wqw6c")]
+[node name="Card3" parent="UI/MarginContainer/bottom_ui/HandContainer" instance=ExtResource("3_wqw6c")]
 layout_mode = 2
 
-[node name="Card4" parent="UI/MarginContainer/HandContainer" instance=ExtResource("3_wqw6c")]
+[node name="Card4" parent="UI/MarginContainer/bottom_ui/HandContainer" instance=ExtResource("3_wqw6c")]
 layout_mode = 2
 
-[node name="Card5" parent="UI/MarginContainer/HandContainer" instance=ExtResource("3_wqw6c")]
+[node name="Card5" parent="UI/MarginContainer/bottom_ui/HandContainer" instance=ExtResource("3_wqw6c")]
 layout_mode = 2
 
-[node name="Card6" parent="UI/MarginContainer/HandContainer" instance=ExtResource("3_wqw6c")]
+[node name="Card6" parent="UI/MarginContainer/bottom_ui/HandContainer" instance=ExtResource("3_wqw6c")]
 layout_mode = 2
 
-[node name="Card7" parent="UI/MarginContainer/HandContainer" instance=ExtResource("3_wqw6c")]
+[node name="Card7" parent="UI/MarginContainer/bottom_ui/HandContainer" instance=ExtResource("3_wqw6c")]
+layout_mode = 2
+
+[node name="Settings" parent="UI/MarginContainer/bottom_ui" instance=ExtResource("7_16yqq")]
 layout_mode = 2
 
 [node name="CardHolder" type="Node" parent="."]
 unique_name_in_owner = true
 
-[connection signal="mouse_entered" from="UI/MarginContainer/HandContainer" to="UI/MarginContainer/HandContainer" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="UI/MarginContainer/HandContainer" to="UI/MarginContainer/HandContainer" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="UI/MarginContainer/bottom_ui/HandContainer" to="UI/MarginContainer/bottom_ui/HandContainer" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="UI/MarginContainer/bottom_ui/HandContainer" to="UI/MarginContainer/bottom_ui/HandContainer" method="_on_mouse_exited"]
