@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dtv16ej3hv1nr"]
+[gd_scene load_steps=8 format=3 uid="uid://dtv16ej3hv1nr"]
 
 [ext_resource type="Script" path="res://scripts/cards/card.gd" id="1_6ytjm"]
-[ext_resource type="Texture2D" uid="uid://d20ap51dd0joh" path="res://assets/cards/card_placeholder.png" id="2_65382"]
+[ext_resource type="PackedScene" uid="uid://b0nj5wb5db00g" path="res://scenes/card/card_on_board.tscn" id="2_1ncda"]
+[ext_resource type="Texture2D" uid="uid://d20ap51dd0joh" path="res://assets/cards/place_holder_card/card_placeholder.png" id="2_87cul"]
 
 [sub_resource type="Animation" id="Animation_2jtch"]
 length = 0.001
@@ -65,6 +66,7 @@ size_flags_horizontal = 8
 size_flags_vertical = 8
 mouse_default_cursor_shape = 2
 script = ExtResource("1_6ytjm")
+card_on_board = ExtResource("2_1ncda")
 
 [node name="Anim" type="AnimationPlayer" parent="."]
 libraries = {
@@ -73,7 +75,7 @@ libraries = {
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(80, 150)
-texture = ExtResource("2_65382")
+texture = ExtResource("2_87cul")
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

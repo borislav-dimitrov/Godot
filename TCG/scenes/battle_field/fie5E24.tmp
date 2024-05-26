@@ -46,35 +46,27 @@ can_spawn = true
 
 [node name="Cell4" parent="GridContainer/Row1" instance=ExtResource("2_7yiw4")]
 layout_mode = 2
-can_spawn = false
 
 [node name="Cell5" parent="GridContainer/Row1" instance=ExtResource("2_7yiw4")]
 layout_mode = 2
-can_spawn = false
 
 [node name="Cell6" parent="GridContainer/Row1" instance=ExtResource("2_7yiw4")]
 layout_mode = 2
-can_spawn = false
 
 [node name="Cell7" parent="GridContainer/Row1" instance=ExtResource("2_7yiw4")]
 layout_mode = 2
-can_spawn = false
 
 [node name="Cell8" parent="GridContainer/Row1" instance=ExtResource("2_7yiw4")]
 layout_mode = 2
-can_spawn = false
 
 [node name="Cell9" parent="GridContainer/Row1" instance=ExtResource("2_7yiw4")]
 layout_mode = 2
-can_spawn = false
 
 [node name="Cell10" parent="GridContainer/Row1" instance=ExtResource("2_7yiw4")]
 layout_mode = 2
-can_spawn = false
 
 [node name="Cell11" parent="GridContainer/Row1" instance=ExtResource("2_7yiw4")]
 layout_mode = 2
-can_spawn = false
 
 [node name="Row2" type="GridContainer" parent="GridContainer"]
 layout_mode = 2
@@ -94,35 +86,27 @@ can_spawn = true
 
 [node name="Cell4" parent="GridContainer/Row2" instance=ExtResource("2_7yiw4")]
 layout_mode = 2
-can_spawn = false
 
 [node name="Cell5" parent="GridContainer/Row2" instance=ExtResource("2_7yiw4")]
 layout_mode = 2
-can_spawn = false
 
 [node name="Cell6" parent="GridContainer/Row2" instance=ExtResource("2_7yiw4")]
 layout_mode = 2
-can_spawn = false
 
 [node name="Cell7" parent="GridContainer/Row2" instance=ExtResource("2_7yiw4")]
 layout_mode = 2
-can_spawn = false
 
 [node name="Cell8" parent="GridContainer/Row2" instance=ExtResource("2_7yiw4")]
 layout_mode = 2
-can_spawn = false
 
 [node name="Cell9" parent="GridContainer/Row2" instance=ExtResource("2_7yiw4")]
 layout_mode = 2
-can_spawn = false
 
 [node name="Cell10" parent="GridContainer/Row2" instance=ExtResource("2_7yiw4")]
 layout_mode = 2
-can_spawn = false
 
 [node name="Cell11" parent="GridContainer/Row2" instance=ExtResource("2_7yiw4")]
 layout_mode = 2
-can_spawn = false
 
 [node name="Row3" type="GridContainer" parent="GridContainer"]
 layout_mode = 2
@@ -142,35 +126,27 @@ can_spawn = true
 
 [node name="Cell4" parent="GridContainer/Row3" instance=ExtResource("2_7yiw4")]
 layout_mode = 2
-can_spawn = false
 
 [node name="Cell5" parent="GridContainer/Row3" instance=ExtResource("2_7yiw4")]
 layout_mode = 2
-can_spawn = false
 
 [node name="Cell6" parent="GridContainer/Row3" instance=ExtResource("2_7yiw4")]
 layout_mode = 2
-can_spawn = false
 
 [node name="Cell7" parent="GridContainer/Row3" instance=ExtResource("2_7yiw4")]
 layout_mode = 2
-can_spawn = false
 
 [node name="Cell8" parent="GridContainer/Row3" instance=ExtResource("2_7yiw4")]
 layout_mode = 2
-can_spawn = false
 
 [node name="Cell9" parent="GridContainer/Row3" instance=ExtResource("2_7yiw4")]
 layout_mode = 2
-can_spawn = false
 
 [node name="Cell10" parent="GridContainer/Row3" instance=ExtResource("2_7yiw4")]
 layout_mode = 2
-can_spawn = false
 
 [node name="Cell11" parent="GridContainer/Row3" instance=ExtResource("2_7yiw4")]
 layout_mode = 2
-can_spawn = false
 
 [node name="Row4" type="GridContainer" parent="GridContainer"]
 layout_mode = 2
@@ -190,35 +166,27 @@ can_spawn = true
 
 [node name="Cell4" parent="GridContainer/Row4" instance=ExtResource("2_7yiw4")]
 layout_mode = 2
-can_spawn = false
 
 [node name="Cell5" parent="GridContainer/Row4" instance=ExtResource("2_7yiw4")]
 layout_mode = 2
-can_spawn = false
 
 [node name="Cell6" parent="GridContainer/Row4" instance=ExtResource("2_7yiw4")]
 layout_mode = 2
-can_spawn = false
 
 [node name="Cell7" parent="GridContainer/Row4" instance=ExtResource("2_7yiw4")]
 layout_mode = 2
-can_spawn = false
 
 [node name="Cell8" parent="GridContainer/Row4" instance=ExtResource("2_7yiw4")]
 layout_mode = 2
-can_spawn = false
 
 [node name="Cell9" parent="GridContainer/Row4" instance=ExtResource("2_7yiw4")]
 layout_mode = 2
-can_spawn = false
 
 [node name="Cell10" parent="GridContainer/Row4" instance=ExtResource("2_7yiw4")]
 layout_mode = 2
-can_spawn = false
 
 [node name="Cell11" parent="GridContainer/Row4" instance=ExtResource("2_7yiw4")]
 layout_mode = 2
-can_spawn = false
 
 [node name="Row5" type="GridContainer" parent="GridContainer"]
 layout_mode = 2
@@ -238,32 +206,24 @@ can_spawn = true
 
 [node name="Cell4" parent="GridContainer/Row5" instance=ExtResource("2_7yiw4")]
 layout_mode = 2
-can_spawn = false
 
 [node name="Cell5" parent="GridContainer/Row5" instance=ExtResource("2_7yiw4")]
 layout_mode = 2
-can_spawn = false
 
 [node name="Cell6" parent="GridContainer/Row5" instance=ExtResource("2_7yiw4")]
 layout_mode = 2
-can_spawn = false
 
 [node name="Cell7" parent="GridContainer/Row5" instance=ExtResource("2_7yiw4")]
 layout_mode = 2
-can_spawn = false
 
 [node name="Cell8" parent="GridContainer/Row5" instance=ExtResource("2_7yiw4")]
 layout_mode = 2
-can_spawn = false
 
 [node name="Cell9" parent="GridContainer/Row5" instance=ExtResource("2_7yiw4")]
 layout_mode = 2
-can_spawn = false
 
 [node name="Cell10" parent="GridContainer/Row5" instance=ExtResource("2_7yiw4")]
 layout_mode = 2
-can_spawn = false
 
 [node name="Cell11" parent="GridContainer/Row5" instance=ExtResource("2_7yiw4")]
 layout_mode = 2
-can_spawn = false

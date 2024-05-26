@@ -3,23 +3,27 @@ extends Container
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var anim: AnimationPlayer = $Anim
-const card = preload("res://scenes/card/card_held.tscn")
+
+@export var card_on_board: PackedScene
 
 var start_pos
 var card_highlighted: bool = false
 var card_temp
+var props: Dictionary = {
+	G.CARD_PROPS.MOVE_SPEED : 2,
+}
 
 func _handle_click_down():
 	if G.card_selected and G.card_selected == self:
 		anim.play('deselect')
-		G.card_selected = null
+		G.clear_card_selected()
 	elif card_highlighted and G.card_selected and G.card_selected != self:
 		G.card_selected.anim.play('deselect')
-		G.card_selected = self
+		G.change_card_selected(self)
 		anim.play('select')
 	else:
 		if card_highlighted:
-			G.card_selected = self
+			G.change_card_selected(self)
 			anim.play('select')
 	
 	if G.card_selected and card_highlighted:

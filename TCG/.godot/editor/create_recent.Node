@@ -1,10 +1,10 @@
+Container
+Control
+GridContainer
 AnimationPlayer
 Sprite2D
-Container
 ColorRect
 TextureRect
-GridContainer
-Control
 MarginContainer
 Node
 CanvasLayer
