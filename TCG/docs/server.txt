@@ -1,0 +1,13 @@
+Keep track for:
+	1. Players:
+		Class
+		Name
+		Life - Max/Current
+		Cards Left
+	
+	2. Battle Field
+		Each cell content (think whether to be able to know more info about the cell content [i.e. if minion, know his buffs, debuffs, etc.])
+	
+	3. Combat State
+		Players Alive
+		Players Dead

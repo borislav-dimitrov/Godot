@@ -1,9 +1,10 @@
+res://scripts/client
+res://scenes
 res://scenes/features
 res://scenes/battle_field
 res://scripts
 res://scripts/battle_field
 res://scripts/cards
 res://scripts/ui
-res://scenes
 res://materials
 res://shaders

@@ -1,5 +1,6 @@
 extends Node
 
+var client: Client = preload("res://scripts/client/client.gd").new()
 var card_selected: Card
 var card_to_spawn: PackedScene
 var mouse_on_placement: bool = false
