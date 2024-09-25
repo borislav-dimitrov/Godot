@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://kkn7gwwyxaia"]
+
+[ext_resource type="Script" path="res://scripts/client.gd" id="1_m8agj"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m8agj")
+
+[node name="ConnectButton" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Connect to Server"
+
+[node name="DisconnectButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 2.0
+offset_right = 322.0
+offset_bottom = 33.0
+text = "Disconnect from Server"
+
+[connection signal="pressed" from="ConnectButton" to="." method="_connect_to_server"]
+[connection signal="pressed" from="DisconnectButton" to="." method="_disconnect_from_server"]

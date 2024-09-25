@@ -1,0 +1,115 @@
+[gd_scene load_steps=2 format=3 uid="uid://c64pbxmobgjq1"]
+
+[ext_resource type="Script" path="res://scripts/server_main.gd" id="1_rrlvr"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rrlvr")
+
+[node name="MainContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.02
+anchor_top = 0.02
+anchor_right = 0.98
+anchor_bottom = 0.98
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="ServerStatusContainer" type="HBoxContainer" parent="MainContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ServerStatusTitleLabel" type="Label" parent="MainContainer/ServerStatusContainer"]
+layout_mode = 2
+text = "Server Status:"
+
+[node name="ServerStatusLabel" type="Label" parent="MainContainer/ServerStatusContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Stopped"
+
+[node name="ControlsContainer" type="HBoxContainer" parent="MainContainer"]
+layout_mode = 2
+
+[node name="StartServer" type="Button" parent="MainContainer/ControlsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Start"
+
+[node name="StopServer" type="Button" parent="MainContainer/ControlsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Stop Server"
+
+[node name="ConnectionsContainer" type="VBoxContainer" parent="MainContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainContainer/ConnectionsContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ConnectionsTitle" type="Label" parent="MainContainer/ConnectionsContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Connected Clients:"
+
+[node name="ConnectionsCt" type="Label" parent="MainContainer/ConnectionsContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "0
+"
+
+[node name="ActiveConnections" type="ItemList" parent="MainContainer/ConnectionsContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+
+[node name="LogsContainer" type="VBoxContainer" parent="MainContainer"]
+layout_mode = 2
+
+[node name="LogsTitle" type="Label" parent="MainContainer/LogsContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Server Logs"
+
+[node name="LogsText" type="TextEdit" parent="MainContainer/LogsContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 170)
+layout_mode = 2
+placeholder_text = "Hello...."
+editable = false
+scroll_smooth = true
+
+[node name="InputContainer" type="VBoxContainer" parent="MainContainer"]
+layout_mode = 2
+
+[node name="InputTitle" type="Label" parent="MainContainer/InputContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+text = "Command Inputs"
+
+[node name="CommandWidget" type="LineEdit" parent="MainContainer/InputContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+placeholder_text = "Input command..."
+
+[node name="Close" type="Button" parent="MainContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+text = "Close"
+
+[connection signal="pressed" from="MainContainer/ControlsContainer/StartServer" to="." method="_start_server"]
+[connection signal="pressed" from="MainContainer/ControlsContainer/StopServer" to="." method="_stop_server"]
+[connection signal="text_submitted" from="MainContainer/InputContainer/CommandWidget" to="." method="_on_text_edit_text_submitted"]
+[connection signal="pressed" from="MainContainer/Close" to="." method="_on_close"]
