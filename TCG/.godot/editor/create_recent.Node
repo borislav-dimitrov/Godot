@@ -1,10 +1,10 @@
+TextEdit
+Label
 MarginContainer
 HBoxContainer
 Container
 Button
-Label
 VBoxContainer
-TextEdit
 TextureRect
 ColorRect
 Control

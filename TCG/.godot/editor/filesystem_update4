@@ -1,9 +1,13 @@
+res://scenes/login.tscn
 res://shaders/inline.gdshader
 res://materials/inline.tres
 res://shaders/inline-outline.gdshader
 res://materials/inline-outline.tres
 res://shaders/outline.gdshader
-res://scenes/login.tscn
-res://scripts/client/login.gd
 res://scripts/client/client.gd
-res://scripts/global.gd
+res://scripts/client/login.gd
+res://scenes/lobby.tscn
+res://scenes/battle_field/battle_field.tscn
+res://scenes/battle_field/battle_field_ui.tscn
+res://scenes/features/deck_pane.tscn
+res://scenes/features/settings_pane.tscn
