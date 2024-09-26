@@ -23,6 +23,8 @@ var commands_map: Dictionary = {
 var server_peer: ENetMultiplayerPeer = null
 var _current_server_state: ServerStates = ServerStates.STOP
 var client_mgr: ClientManager = preload("res://scripts/client_handling/client_mgr.gd").new()
+var ServerCommandTypes: Array[String] = ['ECHO']
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -123,14 +125,24 @@ func _on_text_edit_text_submitted(new_text: String):
 
 @rpc('any_peer')
 func message(payload: Dictionary):
-	Utilities.write_log(log_widget, 'Client %s says %s!' % [payload['id'], payload['msg']])
+	if 'id' not in payload:
+		return
 	
-	var re_payload: Dictionary = {
+	var response: Dictionary = {
 		'id': _local_id(),
-		'msg': 'Hayyy'
+		'cmd': 'ECHO',
+		'msg': ''
 	}
 	
-	rpc_id(int(payload['id']), 'message', re_payload)
+	if 'cmd' not in payload:
+		response['msg'] = 'Missing command type!'
+		rpc_id(payload['id'], 'message', response)
+	elif payload['cmd'] not in ServerCommandTypes:
+		response['msg'] = 'Invalid command type - %s!' % payload['cmd']
+		rpc_id(payload['id'], 'message', response)
+	elif payload['cmd'] == 'ECHO':
+		Utilities.write_log(log_widget, 'Client %s says %s!' % [payload['id'], payload['msg']])
+
 
 func _local_id():
 	return multiplayer.get_unique_id()

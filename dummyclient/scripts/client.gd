@@ -2,6 +2,8 @@ extends Node
 
 @onready var client_peer: ENetMultiplayerPeer = null
 
+var ServerCommandTypes: Array[String] = ['ECHO']
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -23,6 +25,7 @@ func _connect_to_server(server_ip='127.0.0.1', server_port=4242):
 		await get_tree().create_timer(1).timeout
 		var payload: Dictionary = {
 			'id': _local_id(),
+			'cmd': 'ECHO',
 			'msg': 'hello'
 		}
 		rpc_id(1, 'message', payload)
@@ -46,4 +49,7 @@ func _local_id():
 
 @rpc('any_peer')
 func message(payload: Dictionary):
-	print('Client %s says %s!' % [payload['id'], payload['msg']])
+	if 'cmd' not in payload or payload['cmd'] not in ServerCommandTypes:
+		return
+	elif payload['cmd'] == 'ECHO':
+		print('Server says %s!' % payload['msg'])
