@@ -22,7 +22,7 @@ var commands_map: Dictionary = {
 # Variables
 var server_peer: ENetMultiplayerPeer = null
 var _current_server_state: ServerStates = ServerStates.STOP
-var _active_clients: Array = []
+var client_mgr: ClientManager = preload("res://scripts/client_handling/client_mgr.gd").new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -57,6 +57,9 @@ func _stop_server():
 		Utilities.write_log(log_widget, 'Stopping the server....')
 		server_peer.close()
 		_change_server_state(ServerStates.STOP)
+		client_mgr.clear()
+		active_clients_widget.clear()
+		active_clients_ct_widget.text = str(len(client_mgr.get_all_clients()))
 	else:
 		Utilities.write_log(log_widget, 'Server is not running!')
 
@@ -70,12 +73,13 @@ func _on_close():
 func _add_connection(id: int):
 	Utilities.write_log(log_widget, 'Client %s has connected!' % id)
 	active_clients_widget.add_item(str(id))
-	_active_clients.append(id)
-	active_clients_ct_widget.text = str(len(_active_clients))
+	client_mgr.create_new_client(id)
+	active_clients_ct_widget.text = str(len(client_mgr.get_all_clients()))
 
 
 func _del_connection(id: int):
 	Utilities.write_log(log_widget, 'Client %s has disconnected!' % id)
+	client_mgr.delete_client(id)
 	_remove_client_from_active_clients(id)
 
 
@@ -89,13 +93,13 @@ func _change_server_state(state: ServerStates):
 
 
 func _remove_client_from_active_clients(id: int):
-	_active_clients.erase(id)
+	client_mgr.delete_client(id)
 	
 	for item_nr in range(active_clients_widget.item_count):
 		if active_clients_widget.get_item_text(item_nr) == str(id):
 			active_clients_widget.remove_item(item_nr)
 	
-	active_clients_ct_widget.text = str(len(_active_clients))
+	active_clients_ct_widget.text = str(len(client_mgr.get_all_clients()))
 
 
 func _on_text_edit_text_submitted(new_text: String):
@@ -110,7 +114,7 @@ func _on_text_edit_text_submitted(new_text: String):
 	if command == 'kick':
 		var id: int = int(new_text.split(' ')[-1])
 		Utilities.kick_client(
-			id, _active_clients, log_widget, _remove_client_from_active_clients
+			id, client_mgr.get_client_ids(), log_widget, _remove_client_from_active_clients
 		)
 	else:
 		Utilities.write_log(log_widget, 'Invalid command %s' % command)

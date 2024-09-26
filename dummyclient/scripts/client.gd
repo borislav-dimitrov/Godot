@@ -15,16 +15,20 @@ func _process(delta):
 func _connect_to_server(server_ip='127.0.0.1', server_port=4242):
 	print('Connecting to server...')
 	client_peer = ENetMultiplayerPeer.new()
-	client_peer.create_client(server_ip, server_port)
+	var connection_status = client_peer.create_client(server_ip, server_port)
 	
-	multiplayer.multiplayer_peer = client_peer
-	
-	print('Finished...')
-	# TODO - do some status checks (success/failure/etc.)
+	# TODO - test these checks when connecting from different ip addr
+	if connection_status == OK:
+		multiplayer.multiplayer_peer = client_peer
+		print('Finished...')
+	elif connection_status == ERR_ALREADY_IN_USE:
+		print('Already connected!')
+	elif  connection_status == ERR_CANT_CREATE:
+		print('Couldn\'t connect!')
+	else:
+		print('Something wen\'t wrong! Err Code - %s' % connection_status)
 
 
 func _disconnect_from_server():
 	if not multiplayer.is_server():
 		multiplayer.multiplayer_peer.disconnect_peer(1)
-
-	
