@@ -1,0 +1,11 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1727348549
+icon.svg::CompressedTexture2D::3478374214201978095::1727277659::1727343563::1::::<><>::
+::res://scenes/::1727348517
+main_view.tscn::PackedScene::7009476242930726750::1727348067::0::1::::<><>::res://scripts/server_main.gd
+::res://scripts/::1727348517
+server_main.gd::GDScript::-1::1727348473::0::1::::<>Node<>::
+utilities.gd::GDScript::-1::1727289835::0::1::::Utils<>Node<>::
+::res://scripts/client_handling/::1727348517
+client.gd::GDScript::-1::1727331128::0::1::::Client<>Node<>::
+client_mgr.gd::GDScript::-1::1727331128::0::1::::ClientManager<>Node<>::

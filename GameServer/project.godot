@@ -1,0 +1,21 @@
+config_version=5
+
+[application]
+
+config/name="GameServer"
+run/main_scene="res://scenes/main_view.tscn"
+config/features=PackedStringArray("4.3", "Mobile")
+config/icon="res://icon.svg"
+
+[autoload]
+
+Utilities="*res://scripts/utilities.gd"
+
+[display]
+
+window/size/viewport_width=400
+window/size/viewport_height=600
+
+[rendering]
+
+renderer/rendering_method="mobile"

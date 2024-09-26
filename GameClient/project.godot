@@ -1,0 +1,17 @@
+config_version=5
+
+[application]
+
+config/name="GameClient"
+run/main_scene="res://scenes/scene1.tscn"
+config/features=PackedStringArray("4.3", "Mobile")
+config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=600
+window/size/viewport_height=400
+
+[rendering]
+
+renderer/rendering_method="mobile"
