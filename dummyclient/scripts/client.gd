@@ -20,6 +20,12 @@ func _connect_to_server(server_ip='127.0.0.1', server_port=4242):
 	# TODO - test these checks when connecting from different ip addr
 	if connection_status == OK:
 		multiplayer.multiplayer_peer = client_peer
+		await get_tree().create_timer(1).timeout
+		var payload: Dictionary = {
+			'id': _local_id(),
+			'msg': 'hello'
+		}
+		rpc_id(1, 'message', payload)
 		print('Finished...')
 	elif connection_status == ERR_ALREADY_IN_USE:
 		print('Already connected!')
@@ -32,3 +38,12 @@ func _connect_to_server(server_ip='127.0.0.1', server_port=4242):
 func _disconnect_from_server():
 	if not multiplayer.is_server():
 		multiplayer.multiplayer_peer.disconnect_peer(1)
+
+
+func _local_id():
+	return multiplayer.get_unique_id()
+
+
+@rpc('any_peer')
+func message(payload: Dictionary):
+	print('Client %s says %s!' % [payload['id'], payload['msg']])

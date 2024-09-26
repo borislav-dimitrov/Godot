@@ -1,4 +1,2 @@
 res://scenes/main_view.tscn
 res://scripts/server_main.gd
-res://scripts/client_handling/client.gd
-res://scripts/client_handling/client_mgr.gd

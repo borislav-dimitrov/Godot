@@ -120,3 +120,17 @@ func _on_text_edit_text_submitted(new_text: String):
 		Utilities.write_log(log_widget, 'Invalid command %s' % command)
 	
 	command_widget.clear()
+
+@rpc('any_peer')
+func message(payload: Dictionary):
+	Utilities.write_log(log_widget, 'Client %s says %s!' % [payload['id'], payload['msg']])
+	
+	var re_payload: Dictionary = {
+		'id': _local_id(),
+		'msg': 'Hayyy'
+	}
+	
+	rpc_id(int(payload['id']), 'message', re_payload)
+
+func _local_id():
+	return multiplayer.get_unique_id()
